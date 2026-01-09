@@ -36,7 +36,13 @@ SECRET_KEY = ENV_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'https://codestar.herokuapp.com',
+]
 
 
 # Application definition
@@ -87,13 +93,22 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 
 import dj_database_url
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=SUPABASE_DB_URL,
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+# Use SQLite for local development, PostgreSQL for production
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=SUPABASE_DB_URL,
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
 
 
 # Password validation
