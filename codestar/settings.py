@@ -10,7 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+# Import environment variables
+try:
+    from env import SUPABASE_DB_URL
+except ImportError:
+    SUPABASE_DB_URL = os.getenv(
+        'DATABASE_URL',
+        'postgresql://postgres:[YOUR-PASSWORD]@db.hlswhlhzkrvrzxyqqijt.supabase.co:5432/postgres'
+    )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2)74u9@m=s&qhi^$g39!v&l&s&86k*z7=%d2*_4&!p%3r2#k#m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com']
 
@@ -74,11 +84,14 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=SUPABASE_DB_URL,
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
