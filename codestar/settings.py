@@ -15,12 +15,13 @@ from pathlib import Path
 
 # Import environment variables
 try:
-    from env import SUPABASE_DB_URL
+    from env import SUPABASE_DB_URL, SECRET_KEY as ENV_SECRET_KEY
 except ImportError:
     SUPABASE_DB_URL = os.getenv(
         'DATABASE_URL',
         'postgresql://postgres:[YOUR-PASSWORD]@db.hlswhlhzkrvrzxyqqijt.supabase.co:5432/postgres'
     )
+    ENV_SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fallback-key')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2)74u9@m=s&qhi^$g39!v&l&s&86k*z7=%d2*_4&!p%3r2#k#m'
+SECRET_KEY = ENV_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
