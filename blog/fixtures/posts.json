@@ -1,44 +1,44 @@
 [
-{
-  "model": "blog.post",
-  "pk": 1,
-  "fields": {
-    "title": "Self-Directed Code Learning: Become a Programmer.",
-    "slug": "self-directed-code-learning-become-a-programmer",
-    "author": 2,
-    "content": "Self-Directed Code Learning: Become a Programmer \r\n\r\nYou don’t need permission to start.\r\nYou don’t need a classroom to begin.\r\nYou don’t even need a perfect roadmap.\r\n\r\nSome of the greatest minds in history were self-directed learners—people who took ownership of their education and changed the world because of it.\r\n\r\nElon Musk didn’t grow up as a rocket scientist. He taught himself programming as a teenager, sold his first software at 12, and later read textbooks and research papers on rockets until he understood them deeply enough to build SpaceX. No formal aerospace degree. Just relentless curiosity and disciplined self-study.\r\n\r\nWilliam Shakespeare had no university education. Through self-reading, observation, and practice, he mastered language so profoundly that centuries later, the world still studies his work. He proved that learning doesn’t require elite institutions—only commitment.\r\n\r\nMichael Faraday, one of the greatest scientists in history, was once a bookbinder’s apprentice. He educated himself by reading the very books he bound. His self-learning laid the foundation for modern electricity.\r\n\r\nNow fast-forward to today.\r\n\r\nProgramming is one of the most self-learnable skills in history.\r\nThe internet is your library.\r\nOpen-source is your classroom.\r\nProjects are your exams.\r\n\r\nYou can:\r\n\r\nLearn Python from free tutorials\r\n\r\nBuild real apps by following documentation\r\n\r\nContribute to open-source projects\r\n\r\nFail, fix, repeat—and grow\r\n\r\nSelf-directed code learning is not about being “naturally smart.”\r\nIt’s about consistency, curiosity, and courage.\r\n\r\nIf you can read, think, and persist—you can code.\r\nIf you can code—you can build.\r\nIf you can build—you can change your life.\r\n\r\nDon’t wait for the “right time” or the “perfect course.”\r\nStart where you are. Learn one concept. Write one line of code.\r\n\r\nHistory favors the self-taught.\r\nThe future belongs to those who teach themselves.\r\n\r\nYou can become a programmer—by yourself.\r\nStart today.",
-    "excerpt": "History favors the self-taught. \r\nThe future belongs to those who teach themselves.",
-    "created_on": "2026-01-10T03:34:46.043Z",
-    "updated_on": "2026-01-10T03:34:46.043Z",
-    "status": 1
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 2,
-  "fields": {
-    "title": "Where AI fails in real production systems",
-    "slug": "where-aI-fails-in-real-production-systems",
-    "author": 3,
-    "content": "AI is powerful.\r\nBut production environments are where the hype gets tested.\r\n\r\nHere’s where AI consistently struggles in the real world \r\n\r\nLack of business context\r\nAI can generate code, but it doesn’t understand why a feature exists, who it impacts, or what breaks if it fails.\r\n\r\nEdge cases & hidden dependencies\r\nProduction systems aren’t clean examples. They’re full of legacy code, undocumented behavior, and “temporary” fixes from 3 years ago.\r\n\r\nOverconfidence in wrong answers\r\nAI is great at sounding confident — even when it’s wrong. In prod, confident mistakes are expensive.\r\n\r\nSecurity & compliance blind spots\r\nAI may suggest patterns that violate security policies, data handling rules, or compliance requirements.\r\n\r\nOwnership during incidents\r\nWhen production goes down, AI doesn’t join the incident call, assess business impact, or make trade-off decisions under pressure.\r\n\r\nThe takeaway:\r\nAI is an accelerator — not a decision-maker.\r\n\r\nIn production, judgment beats speed.\r\nExperience beats suggestions.\r\nAccountability beats automation.\r\n\r\nThe best teams don’t replace engineers with AI.\r\nThey use AI to support engineers who understand the system deeply.",
-    "excerpt": "The best teams don’t replace engineers with AI.\r\nThey use AI to support engineers who understand the system deeply.",
-    "created_on": "2026-01-10T03:43:23.164Z",
-    "updated_on": "2026-01-10T03:43:23.164Z",
-    "status": 1
-  }
-},
-{
-  "model": "blog.post",
-  "pk": 3,
-  "fields": {
-    "title": "AI tools every full-stack developer should try in 2026",
-    "slug": "ai-tools-every-full-stack-developer-should-try-in-2026",
-    "author": 4,
-    "content": "AI is no longer “nice to have” in our workflow — it’s infrastructure.\r\n\r\nHere are the AI tools I see full-stack developers actually using to ship better software in 2026 \r\n\r\nAI Code Assistants (ChatGPT, GitHub Copilot, Cursor)\r\nFor scaffolding, refactoring, test generation, and explaining unfamiliar codebases.\r\n\r\nAI Debugging & Code Review Tools\r\nTools that analyze logs, traces, and PRs to spot bugs, performance issues, and security risks before production.\r\n\r\nAI-Powered Testing Tools\r\nGenerate unit, integration, and edge-case tests automatically — huge time saver for regression testing.\r\n\r\nAI for API & Schema Design\r\nUse AI to draft OpenAPI specs, validate contracts, and catch breaking changes early.\r\n\r\nAI Documentation Generators\r\nTurn code and commits into readable docs — because good documentation still scales teams.\r\n\r\nAI Security & Dependency Scanners\r\nProactively detect vulnerable packages, secrets, and misconfigurations.\r\n\r\nAI Observability Assistants\r\nSummarize logs, metrics, and incidents in plain language so you fix problems faster.\r\n\r\nMy rule:\r\nIf an AI tool doesn’t reduce cognitive load or improve code quality, it’s noise.\r\n\r\nAI won’t replace full-stack developers —\r\nbut full-stack developers who use AI well will set the pace.",
-    "excerpt": "Here are the AI tools I see full-stack developers actually using to ship better software in 2026",
-    "created_on": "2026-01-10T03:48:14.489Z",
-    "updated_on": "2026-01-10T03:48:14.489Z",
-    "status": 0
-  }
-}
+    {
+        "model": "blog.post",
+        "pk": 1,
+        "fields": {
+            "title": "Self-Directed Code Learning: Become a Programmer.",
+            "slug": "self-directed-code-learning-become-a-programmer",
+            "author": 2,
+            "content": "Self-Directed Code Learning: Become a Programmer\n\nYou don't need permission to start.\nYou don't need a classroom to begin.\nYou don't even need a perfect roadmap.\n\nSome of the greatest minds in history were self-directed learners - people who took ownership of their education and changed the world because of it.\n\nElon Musk didn't grow up as a rocket scientist. He taught himself programming as a teenager, sold his first software at 12, and later read textbooks and research papers on rockets until he understood them deeply enough to build SpaceX. No formal aerospace degree. Just relentless curiosity and disciplined self-study.\n\nWilliam Shakespeare had no university education. Through self-reading, observation, and practice, he mastered language so profoundly that centuries later, the world still studies his work. He proved that learning doesn't require elite institutions - only commitment.\n\nMichael Faraday, one of the greatest scientists in history, was once a bookbinder's apprentice. He educated himself by reading the very books he bound. His self-learning laid the foundation for modern electricity.\n\nNow fast-forward to today.\n\nProgramming is one of the most self-learnable skills in history.\nThe internet is your library.\nOpen-source is your classroom.\nProjects are your exams.\n\nYou can:\n\nLearn Python from free tutorials\n\nBuild real apps by following documentation\n\nContribute to open-source projects\n\nFail, fix, repeat - and grow\n\nSelf-directed code learning is not about being naturally smart.\nIt's about consistency, curiosity, and courage.\n\nIf you can read, think, and persist - you can code.\nIf you can code - you can build.\nIf you can build - you can change your life.\n\nDon't wait for the right time or the perfect course.\nStart where you are. Learn one concept. Write one line of code.\n\nHistory favors the self-taught.\nThe future belongs to those who teach themselves.\n\nYou can become a programmer - by yourself.\nStart today.",
+            "excerpt": "History favors the self-taught. The future belongs to those who teach themselves.",
+            "created_on": "2026-01-10T03:34:46.043Z",
+            "updated_on": "2026-01-10T03:34:46.043Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 2,
+        "fields": {
+            "title": "Where AI fails in real production systems",
+            "slug": "where-ai-fails-in-real-production-systems",
+            "author": 3,
+            "content": "AI is powerful.\nBut production environments are where the hype gets tested.\n\nHere's where AI consistently struggles in the real world\n\nLack of business context\nAI can generate code, but it doesn't understand why a feature exists, who it impacts, or what breaks if it fails.\n\nEdge cases & hidden dependencies\nProduction systems aren't clean examples. They're full of legacy code, undocumented behavior, and temporary fixes from 3 years ago.\n\nOverconfidence in wrong answers\nAI is great at sounding confident - even when it's wrong. In prod, confident mistakes are expensive.\n\nSecurity & compliance blind spots\nAI may suggest patterns that violate security policies, data handling rules, or compliance requirements.\n\nOwnership during incidents\nWhen production goes down, AI doesn't join the incident call, assess business impact, or make trade-off decisions under pressure.\n\nThe takeaway:\nAI is an accelerator - not a decision-maker.\n\nIn production, judgment beats speed.\nExperience beats suggestions.\nAccountability beats automation.\n\nThe best teams don't replace engineers with AI.\nThey use AI to support engineers who understand the system deeply.",
+            "excerpt": "The best teams don't replace engineers with AI. They use AI to support engineers who understand the system deeply.",
+            "created_on": "2026-01-10T03:43:23.164Z",
+            "updated_on": "2026-01-10T03:43:23.164Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 3,
+        "fields": {
+            "title": "AI tools every full-stack developer should try in 2026",
+            "slug": "ai-tools-every-full-stack-developer-should-try-in-2026",
+            "author": 4,
+            "content": "AI is no longer nice to have in our workflow - it's infrastructure.\n\nHere are the AI tools I see full-stack developers actually using to ship better software in 2026\n\nAI Code Assistants (ChatGPT, GitHub Copilot, Cursor)\nFor scaffolding, refactoring, test generation, and explaining unfamiliar codebases.\n\nAI Debugging & Code Review Tools\nTools that analyze logs, traces, and PRs to spot bugs, performance issues, and security risks before production.\n\nAI-Powered Testing Tools\nGenerate unit, integration, and edge-case tests automatically - huge time saver for regression testing.\n\nAI for API & Schema Design\nUse AI to draft OpenAPI specs, validate contracts, and catch breaking changes early.\n\nAI Documentation Generators\nTurn code and commits into readable docs - because good documentation still scales teams.\n\nAI Security & Dependency Scanners\nProactively detect vulnerable packages, secrets, and misconfigurations.\n\nAI Observability Assistants\nSummarize logs, metrics, and incidents in plain language so you fix problems faster.\n\nMy rule:\nIf an AI tool doesn't reduce cognitive load or improve code quality, it's noise.\n\nAI won't replace full-stack developers - but full-stack developers who use AI well will set the pace.",
+            "excerpt": "Here are the AI tools I see full-stack developers actually using to ship better software in 2026",
+            "created_on": "2026-01-10T03:48:14.489Z",
+            "updated_on": "2026-01-10T03:48:14.489Z",
+            "status": 1
+        }
+    }
 ]
