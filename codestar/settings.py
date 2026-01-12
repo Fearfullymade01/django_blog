@@ -15,12 +15,8 @@ from pathlib import Path
 
 # Import environment variables
 try:
-    from env import SUPABASE_DB_URL, SECRET_KEY as ENV_SECRET_KEY
+    from env import SECRET_KEY as ENV_SECRET_KEY
 except ImportError:
-    SUPABASE_DB_URL = os.getenv(
-        'DATABASE_URL',
-        'postgresql://postgres:[YOUR-PASSWORD]@db.hlswhlhzkrvrzxyqqijt.supabase.co:5432/postgres'
-    )
     ENV_SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fallback-key')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -92,24 +88,12 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-import dj_database_url
-
-# Use SQLite for local development, PostgreSQL for production
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=SUPABASE_DB_URL,
-            conn_max_age=600,
-            conn_health_checks=True,
-        )
-    }
+}
 
 
 # Password validation
