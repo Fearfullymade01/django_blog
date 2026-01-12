@@ -12,6 +12,7 @@ db.sqlite3
 *.sqlite3
 env.py
 blog/fixtures/
+staticfiles/
 
 # Tooling
 .pytest_cache/
