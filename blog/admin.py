@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 
 from .models import Post, Comment
 
@@ -11,12 +12,12 @@ class CommentInline(admin.TabularInline):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ("title", "author", "status", "created_on")
-    search_fields = ("title", "content", "author__username")
-    list_filter = ("status", "author", "created_on")
-    prepopulated_fields = {"slug": ("title",)}
-    inlines = [CommentInline]
+class PostAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'slug', 'status')
+    search_fields = ['title']
+    list_filter = ('status',)
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('content',)
 
 
 @admin.register(Comment)
