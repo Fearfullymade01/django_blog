@@ -1,7 +1,7 @@
 [
     {
         "model": "blog.post",
-        "pk": 1,
+        "pk": null,
         "fields": {
             "title": "Self-Directed Code Learning: Become a Programmer.",
             "slug": "self-directed-code-learning-become-a-programmer",
@@ -15,7 +15,7 @@
     },
     {
         "model": "blog.post",
-        "pk": 2,
+        "pk": null,
         "fields": {
             "title": "Where AI fails in real production systems",
             "slug": "where-ai-fails-in-real-production-systems",
@@ -29,7 +29,7 @@
     },
     {
         "model": "blog.post",
-        "pk": 3,
+        "pk": null,
         "fields": {
             "title": "AI tools every full-stack developer should try in 2026",
             "slug": "ai-tools-every-full-stack-developer-should-try-in-2026",
