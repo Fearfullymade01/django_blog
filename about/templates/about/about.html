@@ -2,24 +2,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8 offset-md-2 mt-5">
+    <div class="col-md-10 offset-md-1 mt-5">
       {% if about %}
       <!-- About Me Section -->
       <div class="card mb-4">
         <div class="card-body">
-          <h1 class="card-title">{{ about.title }}</h1>
+          <h1 class="card-title text-center">{{ about.title }}</h1>
           <hr />
-          {% if about.profile_image %}
-          <div class="text-center my-4">
-            <img
-              src="{{ about.profile_image.url }}"
-              alt="Profile Image"
-              class="img-fluid rounded-circle"
-              style="max-width: 300px"
-            />
+          <div class="row align-items-start">
+            <div class="col-lg-5 col-md-6 mb-4">
+              <img
+                src="/media/about/nobody.jpg"
+                alt="Profile Image"
+                class="img-fluid w-100"
+                style="border: 2px solid #ddd; padding: 5px"
+              />
+            </div>
+            <div class="col-lg-7 col-md-6">
+              <div class="card-text">{{ about.content|linebreaks }}</div>
+            </div>
           </div>
-          {% endif %}
-          <div class="card-text">{{ about.content|linebreaks }}</div>
           <p class="text-muted mt-3">
             <small>Last updated: {{ about.updated_on|date:"M d, Y, g:i A" }}</small>
           </p>
