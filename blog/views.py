@@ -3,7 +3,9 @@ from django.db.models import Q
 from django.views import generic
 from django.shortcuts import redirect
 from django.contrib import messages
-from .models import Post
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
+from .models import Post, Comment
 from .forms import CommentForm
 
 # Create your views here.
@@ -63,3 +65,47 @@ def post_detail(request, slug):
             "form": form,
         },
     )
+
+
+@require_http_methods(["POST"])
+def edit_comment(request, slug, comment_id):
+    """
+    Edit a comment if the user is the comment author.
+    """
+    post = get_object_or_404(Post, slug=slug)
+    comment = get_object_or_404(Comment, id=comment_id, post=post)
+
+    # Defensive programming: check if the user is the comment author
+    if comment.author != request.user:
+        messages.error(request, "You cannot edit a comment that is not yours.")
+        return redirect("post_detail", slug=slug)
+
+    # Update the comment body
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Comment updated successfully.")
+            return redirect("post_detail", slug=slug)
+        else:
+            messages.error(request, "Error updating comment.")
+
+    return redirect("post_detail", slug=slug)
+
+
+@require_http_methods(["POST"])
+def delete_comment(request, slug, comment_id):
+    """
+    Delete a comment if the user is the comment author.
+    """
+    post = get_object_or_404(Post, slug=slug)
+    comment = get_object_or_404(Comment, id=comment_id, post=post)
+
+    # Defensive programming: check if the user is the comment author
+    if comment.author != request.user:
+        messages.error(request, "You cannot delete a comment that is not yours.")
+        return redirect("post_detail", slug=slug)
+
+    comment.delete()
+    messages.success(request, "Comment deleted successfully.")
+    return redirect("post_detail", slug=slug)
