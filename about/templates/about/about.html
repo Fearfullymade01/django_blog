@@ -1,43 +1,55 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 offset-md-1 mt-5">
-      {% if about %}
-      <!-- About Me Section -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h1 class="card-title text-center">{{ about.title }}</h1>
-          <hr />
-          <div class="row align-items-start">
-            <div class="col-lg-5 col-md-6 mb-4">
-              <img
-                src="/media/about/nobody.jpg"
-                alt="Profile Image"
-                class="img-fluid w-100"
-                style="border: 2px solid #ddd; padding: 5px"
-              />
-            </div>
-            <div class="col-lg-7 col-md-6">
-              <div class="card-text">{{ about.content|linebreaks }}</div>
-            </div>
-          </div>
-          <p class="text-muted mt-3">
-            <small>Last updated: {{ about.updated_on|date:"M d, Y, g:i A" }}</small>
-          </p>
+{% block content %}
+<div class="container mt-5">
+    {% if messages %}
+    <div class="row">
+        <div class="col-12">
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+            {% endfor %}
         </div>
-      </div>
-      {% else %}
-      <!-- No About Content Message -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h1>About Me</h1>
-          <p>Content coming soon...</p>
-        </div>
-      </div>
-      {% endif %}
     </div>
-  </div>
-</div>
+    {% endif %}
+    <div class="row">
+        <div class="col-12 col-md-4 text-center">
+            {% if about.profile_image %}
+            <img src="{{ about.profile_image.url }}" alt="Profile image" width="75%">
+            {% else %}
+            <img src="{% static 'images/nobody.jpg' %}" alt="Profile image placeholder" width="75%">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-8">
+            <h2>{{ about.title }}</h2>
+            {{ about.content | safe }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-right">
+          <!-- Updated on field goes in here -->
+    
+          <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 my-5">
+            <h2>Let's collaborate!</h2>
+            <p>I believe in the power of shared knowledge and collective effort.
+                Whether you have a project in mind, wish to co-author
+                an article, or simply want to brainstorm some ideas,
+                I'm excited to hear from you. Fill out the form
+                and we can get the ball rolling!</p>
 
+            <!-- add your form here. Your submit button should 
+                                have the classes of btn, btn-secondary -->
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
