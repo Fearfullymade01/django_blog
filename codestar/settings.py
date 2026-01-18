@@ -13,16 +13,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+import cloudinary
 
 # Import environment variables
 try:
     from env import SECRET_KEY as ENV_SECRET_KEY
+    from env import CLOUDINARY_URL as ENV_CLOUDINARY_URL
 except ImportError:
     ENV_SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-fallback-key')
+    ENV_CLOUDINARY_URL = os.getenv('CLOUDINARY_URL', '')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+# Cloudinary Configuration
+if ENV_CLOUDINARY_URL:
+    cloudinary.config(secure=True, secure_distribution=True)
+    os.environ['CLOUDINARY_URL'] = ENV_CLOUDINARY_URL
 
 
 # Quick-start development settings - unsuitable for production
@@ -52,7 +60,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
