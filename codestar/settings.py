@@ -42,12 +42,18 @@ SECRET_KEY = ENV_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*'] if DEBUG else ['.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*'] if DEBUG else [
+    '.herokuapp.com',
+    'codestarrblog-08618bc43f08.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'https://codestar.herokuapp.com',
+    'https://*.herokuapp.com',
+    'https://codestarrblog-08618bc43f08.herokuapp.com',
 ]
 
 
@@ -169,7 +175,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
