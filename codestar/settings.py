@@ -28,9 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Cloudinary Configuration
-if ENV_CLOUDINARY_URL:
-    cloudinary.config(secure=True, secure_distribution=True)
-    os.environ['CLOUDINARY_URL'] = ENV_CLOUDINARY_URL
+os.environ['CLOUDINARY_URL'] = ENV_CLOUDINARY_URL
+cloudinary.config(cloud_name="dvswqwmnp", api_key="951976453495858", api_secret="3l5Envq6-ptfdgyhEejSCcM7I5w")
 
 
 # Quick-start development settings - unsuitable for production
@@ -175,7 +174,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STORAGES = {
     "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
